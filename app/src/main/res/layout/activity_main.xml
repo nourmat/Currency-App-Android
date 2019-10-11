@@ -19,7 +19,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tvsrc"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -28,7 +28,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/spinner"
+                android:id="@+id/tvwordsrc"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -44,7 +44,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnchange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -58,7 +58,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvdst"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -67,7 +67,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/spinner2"
+                android:id="@+id/tvworddst"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -97,7 +97,7 @@
                 android:text="C" />
 
             <Button
-                android:id="@+id/btnearse"
+                android:id="@+id/btndel"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -109,13 +109,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Button" />
-
-            <Button
-                android:id="@+id/btndiv"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="/" />
         </LinearLayout>
 
         <LinearLayout
@@ -144,13 +137,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="9" />
-
-            <Button
-                android:id="@+id/btnX"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="X" />
         </LinearLayout>
 
         <LinearLayout
@@ -180,12 +166,6 @@
                 android:layout_weight="1"
                 android:text="6" />
 
-            <Button
-                android:id="@+id/btnneg"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="-" />
         </LinearLayout>
 
         <LinearLayout
@@ -215,12 +195,6 @@
                 android:layout_weight="1"
                 android:text="3" />
 
-            <Button
-                android:id="@+id/btnpos"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="+" />
         </LinearLayout>
 
         <LinearLayout
@@ -244,18 +218,12 @@
                 android:text="0" />
 
             <Button
-                android:id="@+id/btn."
+                android:id="@+id/btndot"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="." />
 
-            <Button
-                android:id="@+id/btnequ"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="=" />
         </LinearLayout>
     </LinearLayout>
 
