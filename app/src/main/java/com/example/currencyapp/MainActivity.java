@@ -1,6 +1,7 @@
 package com.example.currencyapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,10 +15,16 @@ public class MainActivity extends AppCompatActivity {
     Button btnchange;
     TextView tvsrc, tvdst, tvwordsrc, tvworddst;
 
+    boolean isdotadded;
+    int MAX_LENGTH;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        MAX_LENGTH = 10;
+        isdotadded = false;
 
         btn0 = findViewById(R.id.btn0);
         btn1 = findViewById(R.id.btn1);
@@ -55,11 +62,12 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 //any other digit
-                if (total.length() < 10) {
+                if (total.length() < MAX_LENGTH) {
                     total += s;
                     tvsrc.setText(total);
                     calc();
                 } else
+                    Log.d("tag", "Maximum Length reached");
                     Toast.makeText(getApplicationContext(), "Maximum Length reached", Toast.LENGTH_LONG);
             }
         };
@@ -83,9 +91,11 @@ public class MainActivity extends AppCompatActivity {
                 if (tvwordsrc.getText().toString().equals("EGP")) {
                     tvwordsrc.setText("USD");
                     tvworddst.setText("EGP");
+                    calc();
                 } else {
                     tvwordsrc.setText("EGP");
                     tvworddst.setText("USD");
+                    calc();
                 }
             }
         });
@@ -94,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 tvsrc.setText("0");
+                isdotadded = false;
                 calc();
             }
         });
@@ -103,24 +114,52 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String s = tvsrc.getText().toString();
                 if (s.length() > 1) {
+                    if (s.charAt(s.length() - 1) == '.')
+                        isdotadded = false;
                     s = s.substring(0, s.length() - 1);
                     tvsrc.setText(s);
                     calc();
                 } else if (s.length() == 1) {
                     tvsrc.setText("0");
+                    isdotadded = false;
                     calc();
+                }
+            }
+        });
+
+        btnDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!isdotadded) {
+                    String s = tvsrc.getText().toString();
+                    if (s.length() <= MAX_LENGTH - 2) {
+                        if (s.equals("0"))
+                            s = "0.";
+                        else
+                            s += ".";
+                        tvsrc.setText(s);
+                        calc();
+                        isdotadded = true;
+                    }
+                } else {
+                    Log.d("tag", "dot exist");
+                    Toast.makeText(getApplicationContext(), "the dot already exist", Toast.LENGTH_SHORT);
                 }
             }
         });
     }
 
+    /**
+     * This function check what is the main word currency to change from
+     * it reads what's in the src then make the required calculation to compute the dest
+     */
     void calc() {
         String s = tvsrc.getText().toString();
         if (tvwordsrc.getText().toString().equals("EGP")) {
             float n = Float.parseFloat(s);
             n = n / (float) 16.3;
             tvdst.setText(Float.toString(n));
-        } else {
+        } else if (tvwordsrc.getText().toString().equals("USD")) {
             float n = Float.parseFloat(s);
             n = n * (float) 16.3;
             tvdst.setText(Float.toString(n));
