@@ -17,14 +17,17 @@ public class MainActivity extends AppCompatActivity {
 
     boolean isdotadded;
     int MAX_LENGTH;
+    float first_currency_to_second;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         MAX_LENGTH = 10;
         isdotadded = false;
+        first_currency_to_second = (float) 16.3;
 
         btn0 = findViewById(R.id.btn0);
         btn1 = findViewById(R.id.btn1);
@@ -47,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
         tvdst = findViewById(R.id.tvdst);
         tvwordsrc = findViewById(R.id.tvwordsrc);
         tvworddst = findViewById(R.id.tvworddst);
+
+        tvsrc.setText("0");
+        tvdst.setText("0");
 
         View.OnClickListener numbersListner = new View.OnClickListener() {
             @Override
@@ -72,8 +78,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        tvsrc.setText("0");
-        tvdst.setText("0");
+
         btn9.setOnClickListener(numbersListner);
         btn8.setOnClickListener(numbersListner);
         btn7.setOnClickListener(numbersListner);
@@ -89,12 +94,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (tvwordsrc.getText().toString().equals("EGP")) {
-                    tvwordsrc.setText("USD");
-                    tvworddst.setText("EGP");
+                    tvwordsrc.setText(getResources().getString(R.string.First_currency));
+                    tvworddst.setText(getResources().getString(R.string.Second_currency));
                     calc();
                 } else {
-                    tvwordsrc.setText("EGP");
-                    tvworddst.setText("USD");
+                    tvwordsrc.setText(getResources().getString(R.string.Second_currency));
+                    tvworddst.setText(getResources().getString(R.string.First_currency));
                     calc();
                 }
             }
@@ -155,14 +160,11 @@ public class MainActivity extends AppCompatActivity {
      */
     void calc() {
         String s = tvsrc.getText().toString();
-        if (tvwordsrc.getText().toString().equals("EGP")) {
-            float n = Float.parseFloat(s);
-            n = n / (float) 16.3;
-            tvdst.setText(Float.toString(n));
-        } else if (tvwordsrc.getText().toString().equals("USD")) {
-            float n = Float.parseFloat(s);
-            n = n * (float) 16.3;
-            tvdst.setText(Float.toString(n));
-        }
+        float n = Float.parseFloat(s);
+        if (tvwordsrc.getText().toString().equals(getResources().getString(R.string.Second_currency)))
+            n = n / first_currency_to_second;
+        else if (tvwordsrc.getText().toString().equals(getResources().getString(R.string.First_currency)))
+            n = n * first_currency_to_second;
+        tvdst.setText(String.format("%.02f", n));
     }
 }

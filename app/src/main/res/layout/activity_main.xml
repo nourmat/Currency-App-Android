@@ -23,8 +23,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/colorPrimary"
                 android:gravity="center"
-                android:text="123456789"
                 android:textSize="30sp" />
 
             <TextView
@@ -32,8 +32,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/colorPrimary"
                 android:gravity="center"
-                android:text="USD"
+                android:text="@string/First_currency"
                 android:textSize="30dp" />
         </LinearLayout>
 
@@ -63,7 +64,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="123456789"
                 android:textSize="30sp" />
 
             <TextView
@@ -72,7 +72,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="EGP"
+                android:text="@string/Second_currency"
                 android:textSize="30dp" />
         </LinearLayout>
     </LinearLayout>
@@ -81,6 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
         android:orientation="vertical">
 
         <LinearLayout
