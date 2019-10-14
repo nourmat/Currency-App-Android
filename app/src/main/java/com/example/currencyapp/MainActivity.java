@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                     calc();
                 } else
                     Log.d("tag", "Maximum Length reached");
-                    Toast.makeText(getApplicationContext(), "Maximum Length reached", Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(), "Maximum Length reached", Toast.LENGTH_LONG).show();
             }
         };
 
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 } else {
                     Log.d("tag", "dot exist");
-                    Toast.makeText(getApplicationContext(), "the dot already exist", Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(), "the dot already exist", Toast.LENGTH_SHORT).show();
                 }
             }
         });
