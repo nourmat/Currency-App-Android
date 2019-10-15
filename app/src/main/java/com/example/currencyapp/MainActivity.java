@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
                     tvsrc.setText(total);
                     calc();
                 } else
-                    Log.d("tag", "Maximum Length reached");
-                Toast.makeText(getApplicationContext(), "Maximum Length reached", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Maximum Length reached", Toast.LENGTH_LONG).show();
+
             }
         };
 
