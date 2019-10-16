@@ -2,4 +2,6 @@
     <string name="app_name">Currency App</string>
     <string name="First_currency">USD</string>
     <string name="Second_currency">EGP</string>
+    <string name="change_to">Change to</string>
+    <string name="change_from">Change From</string>
 </resources>

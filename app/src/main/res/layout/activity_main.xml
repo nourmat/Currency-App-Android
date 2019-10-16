@@ -20,22 +20,39 @@
 
             <TextView
                 android:id="@+id/tvsrc"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
                 android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/tvwordsrc"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:text="@string/First_currency"
-                android:textSize="30dp" />
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="@string/change_from"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/tvwordsrc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="@string/First_currency"
+                    android:textSize="30dp" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -60,20 +77,37 @@
 
             <TextView
                 android:id="@+id/tvdst"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/tvworddst"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/Second_currency"
-                android:textSize="30dp" />
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/change_to"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/tvworddst"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/Second_currency"
+                    android:textSize="30dp" />
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 
