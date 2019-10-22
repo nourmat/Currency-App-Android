@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         MAX_LENGTH = 10;
         isdotadded = false;
-        first_currency_to_second = (float) 16.3;
+        first_currency_to_second = (float) 16.6;
 
         btn0 = findViewById(R.id.btn0);
         btn1 = findViewById(R.id.btn1);
